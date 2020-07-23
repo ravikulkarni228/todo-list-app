@@ -1,0 +1,15 @@
+<div class="task-manager-container">
+  <div class="app-title">
+    <h1 class="app-name" [innerHtml]="appName"></h1>
+  </div>
+
+  <!-- add task list child componnet -->
+  <app-task-lists 
+    [todoList]="todoList" 
+    [inProgressList]="inProgressList" 
+    [doneList]="doneList" 
+    (addTask)="onAddTask($event)"
+    (removeTask)="onRemoveTask($event)" 
+    (dropTask)="onDropTask($event)">
+  </app-task-lists>
+</div>

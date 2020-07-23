@@ -1,0 +1,21 @@
+// Import font-awesome
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("../node_modules/ngx-toastr/toastr.css");
+/* GLOBAL STYLES */
+html,
+body {
+  height: 100%;
+  background: #E6E6FA !important;
+  overflow-y: auto;
+}
+
+html {
+  background-size: cover;
+  
+}
+
+a:hover {
+  cursor: pointer !important;
+  text-decoration: underline !important;
+  color: #007bff !important;
+}

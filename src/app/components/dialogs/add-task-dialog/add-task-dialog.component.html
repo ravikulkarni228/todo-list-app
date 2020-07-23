@@ -1,0 +1,32 @@
+<div class="addTaskDataModal">
+  <!-- modal-header -->
+  <div class="modal-header">
+    <h5 class="modal-title" id="editProfileLabel" [innerHtml]="addTaskLable"></h5>
+    <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <!-- modal-body -->
+  <div class="modal-body">
+    <form [formGroup]="addTaskDataForm" (ngSubmit)="onSubmitAddTaskDataForm()" id="frm_silder" autocomplete="off">
+      <div class="form-group row">
+        <label class="col-4" for="task" class="col-sm-4 col-form-label" [innerHtml]="enterTaskLable"></label>
+        <div class="col-8">
+          <input type="text" class="form-control" formControlName="task" id="task" (focus)="removeCustomError()">
+          <div *ngIf="(addTaskDataFormControl.task.dirty || submitted) && addTaskDataFormControl.task.errors?.required"
+            class="text-danger" [innerHtml]="taskRequiredError">
+          </div>
+          <div class="text-danger">
+            <div *ngIf="showErrorTaskExist" [innerHtml]="taskExistsError"></div>
+          </div>
+        </div>
+      </div>
+      <!-- "modal-footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()" [innerHtml]="closeBtn"></button>
+        <button [disabled]="!addTaskDataForm.valid || showErrorTaskExist" type="submit" class="btn btn-primary"
+          [innerHtml]="saveBtn"></button>
+      </div>
+    </form>
+  </div>
+</div>
